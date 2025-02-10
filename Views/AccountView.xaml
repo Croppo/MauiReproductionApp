@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiTabbedApp"
+    x:Class="MauiTabbedApp.AccountView"
+    x:DataType="vm:AccountViewModel">
+    
+    <StackLayout
+        VerticalOptions="Center">
+        <Label Text="Check Contact Permissions" 
+               FontAttributes="Bold"
+               FontSize="20"
+               HorizontalOptions="CenterAndExpand" 
+               Margin="30"/>
+        <Button Text="Request Contacts" 
+                HorizontalOptions="CenterAndExpand" 
+                Command="{Binding CheckPermissionsCommand}"
+                Margin="30"/>
+        <Label Text="Permission Status:" 
+               HorizontalOptions="CenterAndExpand" />
+        <Label Text="{Binding PermissionStatus}"
+               TextColor="{Binding PermissionTextColor}"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="18"
+               Margin="50, 20, 50, 50"/>
+        
+        <Button Text="Open Contacts"
+                BackgroundColor="Green"
+                TextColor="White"
+                Command="{Binding OpenContactsCommand}"
+                IsVisible="{Binding CanOpenContacts}"
+                HorizontalOptions="CenterAndExpand" />
+    </StackLayout>
+    
+</ContentPage>
