@@ -25,12 +25,6 @@ namespace MauiTabbedApp
             builder.Services.AddSingleton<AccountViewModel>();
 
             // Register the services with DI containers
-            builder.Services.AddSingleton<IDialogService, DialogService>();
-            builder.Services.AddSingleton<IThreadService, ThreadService>();
-            builder.Services.AddSingleton<IPageService, PageService>();
-            builder.Services.AddSingleton<INavigationService, NavigationService>();
-            builder.Services.AddSingleton<ILazyService, LazyService>();
-            builder.Services.AddSingleton<IViewBaseService, ViewBaseService>();
             builder.Services.AddSingleton<IContacts>(provider => Communication.Contacts.Default);
 
 
