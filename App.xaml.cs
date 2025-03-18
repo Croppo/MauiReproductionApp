@@ -1,11 +1,13 @@
-﻿namespace MauiTabbedApp;
+﻿using MauiTabbedApp.Services.Navigation;
+
+namespace MauiTabbedApp;
 
 public partial class App : Application
 {
-    public App(TabbedPageViewModel tabbedPage)
+    public App(MainPageViewModel tabbedPage)
     {
         InitializeComponent();
 
-        MainPage = new MainPage(tabbedPage);
+        MainPage = new NavigationPage(new MainPageView(tabbedPage));
     }
 }

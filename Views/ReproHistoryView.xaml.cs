@@ -1,9 +1,9 @@
 ﻿namespace MauiTabbedApp
 {
 
-    public partial class SettingsView : ContentPage
+    public partial class ReproHistoryView : ContentPage
     {
-        public SettingsView(SettingsViewModel viewModel)
+        public ReproHistoryView(ReproHistoryViewModel viewModel)
         {
             InitializeComponent();
 

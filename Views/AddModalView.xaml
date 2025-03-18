@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiTabbedApp"
+    x:Class="MauiTabbedApp.AddModalView"
+    x:DataType="vm:AddModalViewModel"
+    
+    Shell.ForegroundColor="Red">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Close" IconImageSource="{FontImage Glyph='×', Color=Black, Size=24}" Command="{Binding ClosePopupCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="LightGray">
+        
+        <Label Text="Demo Popup" 
+               FontAttributes="Bold"
+               FontSize="22"
+               HorizontalOptions="Center" />
+
+        <Label Text="When returning from backgrounding the app, this modal has a visual glitch on Android that makes it look like it loads on top of itself again."
+               FontSize="16"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

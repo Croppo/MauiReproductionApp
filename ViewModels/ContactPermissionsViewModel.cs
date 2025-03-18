@@ -1,10 +1,12 @@
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiTabbedApp.Services;
+using MauiTabbedApp.Services.Navigation;
 
 namespace MauiTabbedApp
 {
-	public partial class AccountViewModel : ObservableObject
+	public partial class ContactPermissionsViewModel : ObservableObject
 	{
 		private readonly IContacts contacts;
 
@@ -17,7 +19,7 @@ namespace MauiTabbedApp
 		[ObservableProperty] 
 		private Color permissionTextColor = Colors.Grey;
 
-		public AccountViewModel(IContacts contacts)
+		public ContactPermissionsViewModel(IContacts contacts)
 		{
 			this.contacts = contacts;
 		}

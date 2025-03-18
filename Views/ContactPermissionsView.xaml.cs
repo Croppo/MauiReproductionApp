@@ -1,9 +1,9 @@
 ﻿namespace MauiTabbedApp
 {
 
-    public partial class AccountView : ContentPage
+    public partial class ContactPermissionsView : ContentPage
     {
-        public AccountView(AccountViewModel viewModelBase)
+        public ContactPermissionsView(ContactPermissionsViewModel viewModelBase)
         {
             InitializeComponent();
 

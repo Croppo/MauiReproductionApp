@@ -1,0 +1,21 @@
+using CommunityToolkit.Mvvm.Input;
+using MauiTabbedApp.Services.Navigation;
+
+namespace MauiTabbedApp
+{
+	public partial class HomeViewModel : ViewModelBase
+	{
+		private readonly INavigationService navigationService;
+
+		public HomeViewModel(INavigationService navigationService)
+		{
+			this.navigationService = navigationService;
+		}
+		
+		[RelayCommand]
+		public async Task PushNewModal()
+		{
+			await this.navigationService.PushModalAsync<AddModalView>();
+		}
+	}
+}

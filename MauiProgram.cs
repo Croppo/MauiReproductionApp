@@ -1,10 +1,10 @@
-﻿using MauiTabbedApp.Services;
+﻿using CommunityToolkit.Maui;
+using MauiTabbedApp.Services.Navigation;
 using Microsoft.Extensions.Logging;
 using Communication = Microsoft.Maui.ApplicationModel.Communication;
 
 namespace MauiTabbedApp
 {
-
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -12,6 +12,7 @@ namespace MauiTabbedApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -19,13 +20,16 @@ namespace MauiTabbedApp
                 });
 
             // Register the ViewModel with DI containers
-            builder.Services.AddSingleton<TabbedPageViewModel>();
-            builder.Services.AddSingleton<ViewModelBase>();
-            builder.Services.AddSingleton<SettingsViewModel>();
-            builder.Services.AddSingleton<AccountViewModel>();
+            builder.Services.AddTransient<AddModalView, AddModalViewModel>();
+            builder.Services.AddTransient<ContactPermissionsView, ContactPermissionsViewModel>();
+            builder.Services.AddTransient<HomeView, HomeViewModel>();
+            builder.Services.AddTransient<ReproHistoryView, ReproHistoryViewModel>();
+            builder.Services.AddTransient<MainPageView, MainPageViewModel>();
+            builder.Services.AddTransient<ViewModelBase>();
 
             // Register the services with DI containers
             builder.Services.AddSingleton<IContacts>(provider => Communication.Contacts.Default);
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 
 #if DEBUG
