@@ -16,6 +16,9 @@
         <Button Text="Contact Permissions"
                 Command="{Binding NavigateToContactPermissionsCommand}" />
         
+        <Button Text="Open Modal"
+                Command="{Binding NavigateToOpenModalCommand}" />
+        
     </VerticalStackLayout>
     
 </ContentPage>

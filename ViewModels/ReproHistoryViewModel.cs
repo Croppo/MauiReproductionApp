@@ -17,5 +17,11 @@ namespace MauiTabbedApp
 		{
 			await this.navigationService.PushAsync<ContactPermissionsView>();
 		}
+		
+		[RelayCommand]
+		public async Task NavigateToOpenModal()
+		{
+			await this.navigationService.PushAsync<AddModalView>();
+		}
 	}
 }

@@ -13,7 +13,7 @@
                FontSize="22"
                HorizontalOptions="Center" />
         
-        <Button Text="Open Modal" Command="{Binding PushNewModalCommand}"></Button>
+        <Button Text="CollectionView" Command="{Binding OpenCollectionViewCommand}"></Button>
         
     </VerticalStackLayout>
 </ContentPage>

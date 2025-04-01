@@ -25,6 +25,7 @@ namespace MauiTabbedApp
             builder.Services.AddTransient<HomeView, HomeViewModel>();
             builder.Services.AddTransient<ReproHistoryView, ReproHistoryViewModel>();
             builder.Services.AddTransient<MainPageView, MainPageViewModel>();
+            builder.Services.AddTransient<CollectionViewOrientationView, CollectionViewOrientationViewModel>();
             builder.Services.AddTransient<ViewModelBase>();
 
             // Register the services with DI containers

@@ -13,9 +13,9 @@ namespace MauiTabbedApp
 		}
 		
 		[RelayCommand]
-		public async Task PushNewModal()
+		public async Task OpenCollectionView()
 		{
-			await this.navigationService.PushModalAsync<AddModalView>();
+			await this.navigationService.PushAsync<CollectionViewOrientationView>();
 		}
 	}
 }
