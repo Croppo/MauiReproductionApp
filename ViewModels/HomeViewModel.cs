@@ -11,11 +11,17 @@ namespace MauiTabbedApp
 		{
 			this.navigationService = navigationService;
 		}
+
+		[RelayCommand]
+		public void OpenGroupedCollectionView()
+		{
+			this.navigationService.PushAsync<CollectionViewHeaderAccessibilityView>();
+		}
 		
 		[RelayCommand]
-		public async Task OpenCollectionView()
+		public void OpenNewPage()
 		{
-			await this.navigationService.PushAsync<CollectionViewOrientationView>();
+			this.navigationService.PushAsync<NavigateToRootModalView>();
 		}
 	}
 }

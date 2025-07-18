@@ -1,6 +1,4 @@
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Input;
+using MauiTabbedApp.Models;
 using MauiTabbedApp.Services.Navigation;
 
 namespace MauiTabbedApp
@@ -58,11 +56,5 @@ namespace MauiTabbedApp
 		}
 
 		public List<SimpleItem> Items { get; set; }
-	}
-
-	public class SimpleItem
-	{
-		public string Name { get; set; }
-		public decimal Price { get; set; }
 	}
 }

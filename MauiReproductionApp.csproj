@@ -68,6 +68,12 @@
       <MauiXaml Update="Views\CollectionViewOrientationView.xaml">
         <SubType>Designer</SubType>
       </MauiXaml>
+      <MauiXaml Update="Views\NavigateToRootModalView.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Views\CollectionViewHeaderAccessibilityView.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 
     <ItemGroup>
@@ -93,6 +99,14 @@
       </Compile>
       <Compile Update="Views\CollectionViewOrientationView.xaml.cs">
         <DependentUpon>CollectionViewOrientationView.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\NavigateToRootModalView.xaml.cs">
+        <DependentUpon>NavigateToRootModal.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CollectionViewHeaderAccessibilityView.xaml.cs">
+        <DependentUpon>CollectionViewHeaderAccessibilityView.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>

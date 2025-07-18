@@ -19,6 +19,15 @@
         <Button Text="Open Modal"
                 Command="{Binding NavigateToOpenModalCommand}" />
         
+                
+        <Button Text="CollectionView" 
+                Command="{Binding OpenCollectionViewCommand}"></Button>
+        
+        <Button Text="Open navigate to root modal" Command="{Binding OpenNavigateToRootModalCommand}"/>
+        
+                
+        <Button Text="Display Action Sheet" Command="{Binding OpenActionSheetCommand}"/>
+        
     </VerticalStackLayout>
     
 </ContentPage>

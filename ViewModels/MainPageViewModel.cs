@@ -40,11 +40,15 @@ namespace MauiTabbedApp
 			{
 				Title = "Issue"
 			};
+			
+			NavigationPage.SetHasNavigationBar(navPage1, false);
 
 			var navPage2 = new NavigationPage(new ReproHistoryView(this.reproHistoryViewModel))
 			{
 				Title = "History"
 			};
+			
+			NavigationPage.SetHasNavigationBar(navPage2, false);
 
 			this.tabs = new List<Page>
 			{

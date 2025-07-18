@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiTabbedApp"
+    xmlns:model="clr-namespace:MauiTabbedApp.Models"
+    x:Class="MauiTabbedApp.CollectionViewHeaderAccessibilityView"
+    x:DataType="vm:CollectionViewHeaderAccessibilityViewModel">
+    
+    <Grid RowDefinitions="Auto,*" Padding="20" BackgroundColor="LightGray">
+        
+        <CollectionView Grid.Row="1" 
+                        ItemsSource="{Binding GroupedItems}" 
+                        IsGrouped="True">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="5" Padding="10" BackgroundColor="DarkGray">
+                        <VerticalStackLayout x:DataType="model:SimpleItem">
+                            <Label Text="{Binding Name}" FontSize="16" TextColor="White"/>
+                            <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="14" TextColor="LightGray"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate x:DataType="model:GroupedCollection">
+                    <VerticalStackLayout BackgroundColor="CornflowerBlue" Height="50" Padding="20">
+                        <Label Text="{Binding Heading}" FontSize="18" TextColor="White"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            
+        </CollectionView>
+        
+    </Grid>
+    
+</ContentPage>
+

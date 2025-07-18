@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:MauiTabbedApp"
+    xmlns:model="clr-namespace:MauiTabbedApp.Models"
     x:Class="MauiTabbedApp.CollectionViewOrientationView"
     x:DataType="vm:CollectionViewOrientationViewModel"
     
@@ -10,17 +11,19 @@
     
     <Grid RowDefinitions="Auto,*" Padding="20" BackgroundColor="LightGray">
         
-        <!-- Header -->
-        <Label Grid.Row="0" Text="Collection View" FontSize="20" Margin="0,0,0,20"/>
-        
         <!-- CollectionView in a constrained container -->
         <CollectionView Grid.Row="1" ItemsSource="{Binding Items}">
+            
+            <CollectionView.Header>
+                <Label Grid.Row="0" Text="Collection View" FontSize="20" Margin="0,0,0,20"/>
+                
+            </CollectionView.Header>
+            
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="5" Padding="10" BackgroundColor="DarkGrey">
-                        <VerticalStackLayout x:DataType="vm:SimpleItem">
-                            <Label Text="{Binding Name}" FontAttributes="Bold" />
-                            <Label Text="{Binding Price, StringFormat='${0:F2}'}" />
+                        <VerticalStackLayout x:DataType="model:SimpleItem">
+                            <vm:HealthServiceCard></vm:HealthServiceCard>
                         </VerticalStackLayout>
                     </Border>
                 </DataTemplate>
@@ -30,3 +33,4 @@
     </Grid>
     
 </ContentPage>
+

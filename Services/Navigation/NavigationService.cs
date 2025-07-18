@@ -27,6 +27,16 @@ public class NavigationService : INavigationService
         return Task.CompletedTask;
     }
     
+    public Task NavigateToRootAsync()
+    {
+        if (Application.Current?.MainPage is NavigationPage navPage)
+        {
+            return navPage.Navigation.PopToRootAsync(animated: false);
+        }
+
+        return Task.CompletedTask;
+    }
+    
     public Task PushModalAsync<TPage>() where TPage : Page
     {
         var page = ResolvePage<TPage>();
